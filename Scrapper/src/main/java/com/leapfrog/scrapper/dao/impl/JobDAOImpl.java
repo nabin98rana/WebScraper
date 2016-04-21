@@ -11,6 +11,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  *
@@ -37,6 +38,12 @@ private List<Job> jobList=new ArrayList<>();
         }
         writer.write(builder.toString());
         writer.close();
+    }
+
+
+    @Override
+    public List<Job> search(Predicate<Job> p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

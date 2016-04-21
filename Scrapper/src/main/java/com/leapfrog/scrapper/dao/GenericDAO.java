@@ -7,6 +7,7 @@ package com.leapfrog.scrapper.dao;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  *
@@ -16,5 +17,6 @@ public interface GenericDAO<T> {
     void insert(T t);
     List<T>getAll();
     void export(String fileName)throws IOException;
+    List<T> search(Predicate<T> p);
     
 }

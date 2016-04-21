@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Calendar;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -45,8 +47,9 @@ public class Program {
                 Job job = new Job(matcher.group(4).trim(), matcher.group(2));
                 jobDAO.insert(job);
             }
-            long time = Calender.getInstance().getTimeInMillis();
-            jobDAO.export("jobs-"+time+".csv");
+           
+            long time = Calendar.getInstance().getTimeInMillis();
+            jobDAO.export("jobs-" + time + ".csv");
         } catch (IOException ioe) {
             System.out.println(ioe.getMessage());
 
